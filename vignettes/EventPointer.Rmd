@@ -688,7 +688,6 @@ To create the GTF files, the algorithm uses the *EventPointer_RNASeq_TranRef_IGV
 As EventDetection_transcriptome function returns the splicing graph information, this function does not need to create the splicing graph. (EventPointer_IGV is equivalent function for array platform).
 
 ```{r ep_tranref_igv, eval=TRUE, warning=FALSE, collapse=TRUE}
-
 SG_List <- EventXtrans$SG_List
 PathEventsTxt<-system.file('extdata',package='EventPointer')
 PathEventsTxt <- paste0(PathEventsTxt,"/EventsFound_Gencode24_2genes.txt")
@@ -751,7 +750,7 @@ Internally, given the TxD matrix *Protein_Domain_Enrichment* relates protein dom
 **NOTE**: Check that EventXtrans$transcritnames annotation type match to the rownames of the TxD matrix.
 
 ```{r pd_enrichmetn, eval=TRUE, warning=FALSE, collapse=TRUE}
-
+data(EventXtrans)
 data("TxD")
 
 #check same annotation for transcripts:
@@ -759,7 +758,7 @@ EventXtrans$transcritnames[1]
 rownames(TxD)[1]
 
 
-## as si not the same, we change EventXtrans$transcritnames annotation
+## If they are different, we need to change EventXtrans$transcritnames annotation
 transcriptnames <- EventXtrans$transcritnames
 transcriptnames <- gsub("\\..*","",transcriptnames)
 EventXtrans$transcritnames <- transcriptnames
