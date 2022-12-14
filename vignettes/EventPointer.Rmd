@@ -749,7 +749,7 @@ Internally, given the TxD matrix *Protein_Domain_Enrichment* relates protein dom
 
 **NOTE**: Check that EventXtrans$transcritnames annotation type match to the rownames of the TxD matrix.
 
-```{r pd_enrichmetn, eval=TRUE, warning=FALSE, collapse=TRUE}
+```{r pd_enrichmetn, eval=FALSE, warning=FALSE, collapse=TRUE}
 data(EventXtrans)
 data("TxD")
 
